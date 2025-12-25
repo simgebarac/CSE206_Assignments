@@ -9,7 +9,7 @@ This repository contains all the term assignments and projects I developed withi
 * **Features**: Professional interface layout and responsive design supported by **Bootstrap** components.
 
 ### 2. [Assignment 2: Word Chain Game](./CSE206_Assignment%232)
-* **Technology**: React.js (Hooks, React Router).
+* **Technology**: React.js .
 * **Description**: An interactive game project where the user must derive a new word starting with the last letter of the previous word.
 * **Features**:
     * **Validation**: Dictionary check for valid words, prevention of duplicate words, and character matching algorithms.

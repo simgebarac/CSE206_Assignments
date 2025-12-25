@@ -5,7 +5,7 @@ This repository contains all the term assignments and projects I developed withi
 ## 📂 Project List
 
 ### 1. [Assignment 1: Movie Promotion Site](./CSE206_Assignment%231)
-* **Description**: A movie catalog website created using fundamental HTML5 and CSS3 structures.
+* **Description**: A movie catalog website created using fundamental HTML and CSS structures.
 * **Features**: Professional interface layout and responsive design supported by **Bootstrap** components.
 
 ### 2. [Assignment 2: Word Chain Game](./CSE206_Assignment%232)

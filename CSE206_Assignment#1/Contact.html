@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="fontawesome/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@300;900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="horizon.css">
+    <title>cinéphilie</title>
+    <style>
+     body {
+      background-color: rgb(34, 33, 33)
+    }
+    .contact-container {
+      margin-top: 30px;
+    }
+    .map-container {
+      height: 400px; /* Harita yüksekliği */
+      border: 1px solid #ccc;
+      border-radius: 10px;
+    }
+    .contact-info {
+      background-color: #fff;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    .info-item {
+      margin-bottom: 20px;
+    }
+    
+    </style>
+</head>
+<body>
+    <div style="background:linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(37,39,40,1) 50%, rgba(0,0,0,0.486239564185049) 100%)">  <!-- novbar için -->
+        <div class="container">
+          <nav class="navbar navbar-expand-lg navbar-light ">
+            <a class="navbar-brand text-light" href="index.html">
+              <img src="images/deneme.PNG" alt="Logo" style="width: 40px; height: 45px; margin-right: 10px;">cinéphilie 
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+              <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                 <a class="nav-link text-light" href="index.html">HOME</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link text-light" href="filmler.html">Movies</a>
+                </li>
+                <!-- <li class="nav-item">
+                  <a class="nav-link text-light" href="popüler.html">POPÜLER</a>
+                </li> -->
+                <li class="nav-item">
+                  <a class="nav-link text-light" href="SignUp.html">SignUp</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link text-light" href="Contact.html">Contact</a>
+                </li>
+                <li class="nav-item">
+                  <a id="jsBtn" class="nav-link btn btn-dark text-light" href="#">messagebox</a>
+                </li>
+              </ul>
+            </div>
+          </nav>
+        </div>
+      </div>
+
+
+      <div class="container contact-container">
+        <div class="row">
+          
+          <div class="col-md-6">
+            <div class="map-container">
+              
+              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12046.52913629992!2d29.021012202759486!3d40.98952667679606!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14cac8c56586a211%3A0x13db153440078005!2zS2FkxLFrw7Z5IFNpbmVtYXPEsQ!5e0!3m2!1str!2str!4v1741866160627!5m2!1str!2str" width="100%" height="100%" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+            </div>
+          </div>
+    
+          
+          <div class="col-md-6">
+            <div class="contact-info">
+              <h4 class="text-center mb-4">Contact Information</h4>
+    
+              
+              <div class="info-item">
+                <strong>Name surname:</strong> Simge Baraç
+              </div>
+    
+              
+              <div class="info-item">
+                <strong>StudentID:</strong> 221805119
+              </div>
+    
+              
+              <div class="info-item">
+                <strong>address:</strong> Osmanağa, Bahariye Cd. Kadıköy Pasajı No:25, 34714 Kadıköy/İstanbul
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    
+ <div id="horizonCss">
+        Sample text for Horizon Css part.
+
+      </div>
+
+      
+    <script src="bootstrap/js/jquery.slim.min.js"></script>
+    <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script>
+      document.getElementById("jsBtn").addEventListener("click", function(event) {
+        event.preventDefault(); 
+        alert("Hi everyone from javascript");
+        document.getElementById("message").innerText = "Hi everyone from javascript";
+      });
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>

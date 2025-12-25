@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="fontawesome/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@300;900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+    <title>cinéphilie</title>
+    <style>
+     body {
+      background-color: rgb(34, 33, 33)
+    
+    }
+    .carousel-img {
+        height: 650px;
+        object-fit: cover;
+    }
+    </style>
+</head>
+<body>
+
+    <div style="background:linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(37,39,40,1) 50%, rgba(0,0,0,0.486239564185049) 100%)">  <!-- novbar için -->
+        <div class="container">
+          <nav class="navbar navbar-expand-lg navbar-light ">
+            <a class="navbar-brand text-light" href="index.html">
+              <img src="images/deneme.PNG" alt="Logo" style="width: 40px; height: 45px; margin-right: 10px;">cinéphilie 
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+              <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                 <a class="nav-link text-light" href="index.html">HOME</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link text-light" href="filmler.html">Movies</a>
+                </li>
+                <!-- <li class="nav-item">
+                  <a class="nav-link text-light" href="popüler.html">POPÜLER</a>
+                </li> -->
+                <li class="nav-item">
+                  <a class="nav-link text-light" href="SignUp.html">SignUp</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link text-light" href="Contact.html">Contact</a>
+                </li>
+                <li class="nav-item">
+                  <a id="jsBtn" class="nav-link btn btn-dark text-light" href="#">messagebox</a>
+                </li>
+              </ul>
+            </div>
+          </nav>
+        </div>
+      </div>
+
+
+     
+<div class="container my-5 d-flex justify-content-center">
+  <div class="form-container bg-dark text-white p-4 rounded shadow" style="max-width: 400px; width: 100%;">
+    <h4 class="text-center mb-4">Join cinéphilie </h4>
+
+    <form>
+      <div class="form-group">
+        <label for="ad">Username</label>
+        <input type="text" class="form-control" id="ad" required>
+      </div>
+
+ 
+
+      <div class="form-group">
+        <label for="email">Email address</label>
+        <input type="email" class="form-control" id="email" required>
+      </div>
+
+
+      <div class="form-group">
+        <label for="sifre">Password</label>
+        <input type="password" class="form-control" id="sifre" required>
+      </div>
+
+      <label>Gender</label><br>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="cinsiyet" id="erkek" value="erkek">
+        <label class="form-check-label" for="erkek">Male</label>
+      </div>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="cinsiyet" id="erkek" value="erkek">
+        <label class="form-check-label" for="kadin">Female</label>
+      </div>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="cinsiyet" id="kadin" value="kadin">
+        <label class="form-check-label" for="others">Others</label>
+      </div><br><br>
+            
+            <div class="form-group">
+              <label for="sehir">City</label>
+              <select class="form-control" id="sehir" required>
+                <option value="">-- Select --</option>
+                <option>İstanbul</option>
+                <option>Ankara</option>
+                <option>İzmir</option>
+                <option>Bursa</option>
+              </select>
+            </div>
+
+      <label></label>
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" id="spor" value="spor">
+        <label class="form-check-label" for="years">I'm at least 16 years old and accept the Terms of Use.</label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" id="muzik" value="muzik">
+        <label class="form-check-label" for="policy">I accept the Privacy Policy and consent to the processing of my personal information in accordance with it.</label>  
+
+      </div><br>
+      <button type="submit" class="btn btn-info btn-block">Sign Up</button>
+
+    </form>
+  </div>
+</div>
+
+    
+      
+      
+
+
+
+    <script src="bootstrap/js/jquery.slim.min.js"></script>
+    <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script>
+      document.getElementById("jsBtn").addEventListener("click", function(event) {
+        event.preventDefault(); 
+        alert("Hi everyone from javascript");
+        document.getElementById("message").innerText = "Hi everyone from javascript";
+      });
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.6.0/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

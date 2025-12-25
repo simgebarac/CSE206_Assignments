@@ -1,0 +1,49 @@
+﻿@model CINEMA_WEB3.Models.Ticket
+
+@{
+    ViewData["Title"] = "Edit Ticket";
+}
+
+<h1 class="text-center text-info my-4">Edit Ticket</h1>
+
+<div class="card shadow p-4 mx-auto" style="max-width: 700px; background: linear-gradient(135deg, #e1f5fe, #b3e5fc); border-radius: 20px;">
+    <form asp-action="Edit">
+        <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
+        <input type="hidden" asp-for="TicketId" />
+
+        <div class="form-group mb-3">
+            <label asp-for="UserId" class="form-label fw-bold">User</label>
+            <select asp-for="UserId" class="form-control rounded-pill" asp-items="ViewBag.UserId"></select>
+            <span asp-validation-for="UserId" class="text-danger"></span>
+        </div>
+
+        <div class="form-group mb-3">
+            <label asp-for="ShowtimeId" class="form-label fw-bold">Showtime</label>
+            <select asp-for="ShowtimeId" class="form-control rounded-pill" asp-items="ViewBag.ShowtimeId"></select>
+            <span asp-validation-for="ShowtimeId" class="text-danger"></span>
+        </div>
+
+        <div class="form-group mb-3">
+            <label asp-for="SeatNumber" class="form-label fw-bold">Seat Number</label>
+            <input asp-for="SeatNumber" class="form-control rounded-pill px-4" />
+            <span asp-validation-for="SeatNumber" class="text-danger"></span>
+        </div>
+
+        <div class="form-group mb-4">
+            <label asp-for="PurchaseDate" class="form-label fw-bold">Purchase Date</label>
+            <input asp-for="PurchaseDate" class="form-control rounded-pill px-4" type="datetime-local" />
+            <span asp-validation-for="PurchaseDate" class="text-danger"></span>
+        </div>
+
+        <div class="text-center">
+            <button type="submit" class="btn btn-success btn-lg px-5 rounded-pill me-3">💾 Save</button>
+            <a asp-action="Index" class="btn btn-secondary btn-lg px-5 rounded-pill">Back</a>
+        </div>
+    </form>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

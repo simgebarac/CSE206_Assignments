@@ -1,0 +1,56 @@
+﻿@model CINEMA_WEB3.Models.Movie
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+
+<h1 class="text-center text-danger my-4">Delete Movie</h1>
+
+<div class="card shadow p-4 mx-auto" style="max-width: 600px; background: linear-gradient(135deg, #f8f0ff, #d1c4e9); border-radius: 15px;">
+    <h4 class="text-center mb-3" style="color: #5e35b1; font-weight: 700;">Are you sure you want to delete this movie?</h4>
+
+    <dl class="row mb-4" style="font-size: 1.1rem;">
+        <dt class="col-sm-4 fw-bold" style="color: #4527a0;">Title:</dt>
+        <dd class="col-sm-8">@Model.Title</dd>
+
+        <dt class="col-sm-4 fw-bold" style="color: #4527a0;">Genre:</dt>
+        <dd class="col-sm-8">@Model.Genre</dd>
+
+        <dt class="col-sm-4 fw-bold" style="color: #4527a0;">Duration:</dt>
+        <dd class="col-sm-8">@Model.Duration</dd>
+
+        <dt class="col-sm-4 fw-bold" style="color: #4527a0;">Release Date:</dt>
+        <dd class="col-sm-8">
+            @(Model.ReleaseDate.HasValue ? Model.ReleaseDate.Value.ToShortDateString() : "N/A")
+        </dd>
+    </dl>
+
+    <form asp-action="Delete" method="post" class="text-center">
+        <input type="hidden" asp-for="MovieId" />
+        <button type="submit" class="btn btn-danger btn-lg me-3" style="border-radius: 30px; padding: 0.6rem 2.5rem;">
+            Confirm Delete
+        </button>
+        <a asp-action="Index" class="btn btn-secondary btn-lg" style="border-radius: 30px; padding: 0.6rem 2.5rem;">
+            Cancel
+        </a>
+    </form>
+</div>
+
+<style>
+  
+    button.btn-danger:hover {
+        background-color: #7b1fa2;
+        border-color: #7b1fa2;
+        transition: 0.3s;
+        transform: scale(1.05);
+    }
+
+    a.btn-secondary:hover {
+        background-color: #b39ddb;
+        border-color: #b39ddb;
+        transition: 0.3s;
+        color: white !important;
+        transform: scale(1.05);
+    }
+</style>

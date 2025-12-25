@@ -1,0 +1,101 @@
+﻿@model IEnumerable<CINEMA_WEB3.Models.Movie>
+
+@{
+    ViewData["Title"] = "Movies";
+}
+@if (TempData["SuccessMessage"] != null)
+{
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+        @TempData["SuccessMessage"]
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+}
+
+@if (TempData["ErrorMessage"] != null)
+{
+    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+        @TempData["ErrorMessage"]
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+}
+
+
+<style>
+   
+    thead.thead-dark th {
+        background-color: #343a40;
+        color: #f8f9fa;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+    }
+
+    
+    td .btn {
+        margin-right: 5px;
+    }
+
+        
+        td .btn:hover {
+            transform: scale(1.1);
+            transition: transform 0.15s ease-in-out;
+        }
+
+  
+    p > a.btn-primary {
+        background-color: #007bff;
+        border-color: #007bff;
+        font-weight: 600;
+        box-shadow: 0 4px 8px rgba(0,123,255,0.3);
+        transition: background-color 0.3s ease;
+    }
+
+        p > a.btn-primary:hover {
+            background-color: #0056b3;
+            border-color: #004085;
+            box-shadow: 0 6px 12px rgba(0,86,179,0.5);
+        }
+</style>
+
+<h1 class="mb-4 text-primary">Movies List</h1>
+
+<p>
+    <a asp-action="Create" class="btn btn-primary">
+        <i class="fas fa-plus"></i> Create New
+    </a>
+</p>
+
+<table class="table table-striped table-hover table-bordered shadow-sm">
+    <thead class="thead-dark">
+        <tr>
+            <th>@Html.DisplayNameFor(model => model.Title)</th>
+            <th>@Html.DisplayNameFor(model => model.Genre)</th>
+            <th>@Html.DisplayNameFor(model => model.Duration)</th>
+            <th>@Html.DisplayNameFor(model => model.ReleaseDate)</th>
+            <th style="width:140px;">Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@Html.DisplayFor(modelItem => item.Title)</td>
+                <td>@Html.DisplayFor(modelItem => item.Genre)</td>
+                <td>@Html.DisplayFor(modelItem => item.Duration)</td>
+                <td>
+                    @(item.ReleaseDate.HasValue ? item.ReleaseDate.Value.ToShortDateString() : "-")
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.MovieId" class="btn btn-sm btn-warning" title="Edit">
+                        <i class="fas fa-edit"></i>
+                    </a>
+                    <a asp-action="Details" asp-route-id="@item.MovieId" class="btn btn-sm btn-info" title="Details">
+                        <i class="fas fa-info-circle"></i>
+                    </a>
+                    <a asp-action="Delete" asp-route-id="@item.MovieId" class="btn btn-sm btn-danger" title="Delete" onclick="return confirm('Are you sure you want to delete this movie?');">
+                        <i class="fas fa-trash-alt"></i>
+                    </a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

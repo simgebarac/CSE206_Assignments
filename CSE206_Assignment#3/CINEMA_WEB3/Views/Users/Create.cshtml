@@ -1,0 +1,56 @@
+﻿@model CINEMA_WEB3.Models.User
+
+@{
+    ViewData["Title"] = "Create New User"; 
+}
+
+<h1 class="text-center text-primary my-4">Create New User</h1>
+
+<div class="card shadow-lg p-4 mx-auto" style="max-width: 700px; background: linear-gradient(135deg, #e1f5fe, #b3e5fc); border-radius: 20px;">
+    <form asp-action="Create">
+        <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
+
+       
+
+        <div class="form-group mb-3">
+            <label asp-for="Username" class="form-label fw-bold">Username</label>
+            <input asp-for="Username" class="form-control rounded-pill px-4" />
+            <span asp-validation-for="Username" class="text-danger"></span>
+        </div>
+
+        <div class="form-group mb-3">
+            <label asp-for="PasswordHash" class="form-label fw-bold">Password</label> 
+            <input asp-for="PasswordHash" class="form-control rounded-pill px-4" type="password" />
+            <span asp-validation-for="PasswordHash" class="text-danger"></span>
+        </div>
+
+        <div class="form-group mb-3">
+            <label asp-for="FullName" class="form-label fw-bold">Full Name</label>
+            <input asp-for="FullName" class="form-control rounded-pill px-4" />
+            <span asp-validation-for="FullName" class="text-danger"></span>
+        </div>
+
+        <div class="form-group mb-4">
+           
+            <label asp-for="Role" class="form-label fw-bold">Role</label>
+            
+            <select asp-for="Role" class="form-control rounded-pill px-4" asp-items="@ViewBag.RoleList">
+                <option value="">-- Select Role --</option> 
+            </select>
+            <span asp-validation-for="Role" class="text-danger"></span>
+        </div>
+
+        <div class="text-center">
+            <button type="submit" class="btn btn-primary btn-lg px-5 rounded-pill me-3">➕ Create</button>
+            <a asp-action="Index" class="btn btn-secondary btn-lg px-5 rounded-pill">Back to List</a>
+        </div>
+    </form>
+</div>
+
+
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

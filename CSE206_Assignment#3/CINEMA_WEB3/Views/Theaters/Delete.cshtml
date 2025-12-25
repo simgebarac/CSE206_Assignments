@@ -1,0 +1,42 @@
+﻿@model CINEMA_WEB3.Models.Theater
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h1 class="text-center text-danger my-4">Delete Theater</h1>
+
+<div class="card shadow p-4 mx-auto" style="max-width: 600px; background: linear-gradient(135deg, #e3f2fd, #bbdefb); border-radius: 15px;">
+    <h4 class="text-center mb-3" style="color: #1565c0; font-weight: bold;">Are you sure you want to delete this theater?</h4>
+
+    <dl class="row mb-4" style="font-size: 1.1rem;">
+        <dt class="col-sm-4 fw-bold" style="color: #0d47a1;">Name:</dt>
+        <dd class="col-sm-8">@Model.Name</dd>
+
+        <dt class="col-sm-4 fw-bold" style="color: #0d47a1;">Seat Capacity:</dt>
+        <dd class="col-sm-8">@Model.SeatCapacity</dd>
+    </dl>
+
+    <form asp-action="Delete" method="post" class="text-center">
+        <input type="hidden" asp-for="TheaterId" />
+        <button type="submit" class="btn btn-danger btn-lg me-3" style="border-radius: 30px; padding: 0.6rem 2.5rem;">
+            Confirm Delete
+        </button>
+        <a asp-action="Index" class="btn btn-secondary btn-lg" style="border-radius: 30px; padding: 0.6rem 2.5rem;">
+            Cancel
+        </a>
+    </form>
+</div>
+
+<style>
+    .btn-danger:hover {
+        background-color: #0d47a1;
+        border-color: #0d47a1;
+    }
+
+    .btn-secondary:hover {
+        background-color: #1976d2;
+        border-color: #1976d2;
+        color: white;
+    }
+</style>

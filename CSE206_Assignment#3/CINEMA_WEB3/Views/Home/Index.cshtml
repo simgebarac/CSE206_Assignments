@@ -1,0 +1,126 @@
+﻿@model IEnumerable<CINEMA_WEB3.Models.Movie>
+
+@{
+    ViewData["Title"] = "Home";
+}
+
+<style>
+   
+    .hero {
+        position: relative;
+        background: url('/images/homebg.png') no-repeat center center;
+        background-size: cover;
+        height: 55vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
+    }
+
+    .hero-text {
+        background: rgba(0, 0, 0, 0.5);
+        padding: 2rem 3rem;
+        border-radius: 10px;
+        text-align: center;
+        max-width: 700px;
+    }
+
+    .btn-primary {
+        padding: 0.75rem 2rem;
+        font-size: 1.25rem;
+        border-radius: 50px;
+    }
+
+    .section-title {
+        margin-bottom: 2rem;
+        font-weight: 700;
+        color: #007bff;
+    }
+
+    .movie-card {
+        box-shadow: 0 0 15px rgb(0 123 255 / 0.2);
+        border-radius: 10px;
+        padding: 15px;
+        margin-bottom: 20px;
+        background: white;
+        transition: transform 0.2s ease-in-out;
+        text-align: center;
+    }
+
+        .movie-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 20px rgb(0 123 255 / 0.4);
+        }
+
+    .movie-title {
+        font-weight: 600;
+        color: #0056b3;
+        margin-top: 10px;
+    }
+
+    .movie-info {
+        font-size: 0.9rem;
+        color: #555;
+        margin-bottom: 3px;
+    }
+
+    .movie-poster {
+        max-width: 100%;
+        height: auto;
+        border-radius: 5px;
+        margin-bottom: 10px;
+    }
+
+    .btn-outline-primary {
+        color: #007bff;
+        border-color: #007bff;
+    }
+
+        .btn-outline-primary:hover {
+            color: #fff;
+            background-color: #007bff;
+            border-color: #007bff;
+        }
+</style>
+
+<div class="hero">
+    <div class="hero-text">
+        <h1>Welcome to Cinéphilie Management Systems</h1>
+        <p class="lead">Explore movies, check showtimes, and book your tickets with ease!</p>
+        <a asp-controller="Movies" asp-action="Index" class="btn btn-primary">Browse Movies</a>
+    </div>
+</div>
+
+<div class="container my-5">
+    <h2 class="section-title text-center">Popular Movies</h2>
+    <div class="row">
+        @if (Model != null && Model.Any())
+        {
+            @foreach (var movie in Model)
+            {
+                <div class="col-md-3 mb-4">
+                    <div class="movie-card">
+                        <img src="/images/@(movie.MovieId).jpg" class="img-fluid movie-poster" alt="@movie.Title Poster">
+                        <h5 class="movie-title">@movie.Title</h5>
+                        <p class="movie-info">Genre: @movie.Genre</p>
+                        <p class="movie-info">Duration: @movie.Duration mins</p>
+                        <p class="movie-info">Release Date: @movie.ReleaseDate?.ToString("yyyy-MM-dd")</p>
+                        <a asp-controller="Movies" asp-action="Details" asp-route-id="@movie.MovieId" class="btn btn-sm btn-outline-primary">Details</a>
+                    </div>
+                </div>
+            }
+        }
+        else
+        {
+            <div class="col-12 text-center">
+                <p>No popular movies found at the moment.</p>
+            </div>
+        }
+    </div>
+</div>
+
+<div class="container my-5 text-center">
+    <h2 class="section-title">About Our Cinema</h2>
+    <p>We provide the best movie experience with modern theaters, easy ticket booking, and a wide range of films from all genres. Our staff is dedicated to making your visit memorable. Enjoy the show!</p>
+</div>

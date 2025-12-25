@@ -1,0 +1,54 @@
+﻿@model CINEMA_WEB3.Models.User
+
+@{
+    ViewData["Title"] = "User Details";
+}
+
+<h1 class="text-gradient fw-bold mb-4 text-center"
+    style="background: linear-gradient(45deg, #8e2de2, #4a00e0);
+           -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
+    <i class="fas fa-user-circle fa-spin fa-lg me-2" style="color:#4a00e0;"></i>
+    User Details
+</h1>
+
+<div class="card p-4 shadow-lg rounded-4" style="max-width: 650px; background: #f3e8ff; border: 3px solid #7b2ff7; margin-left: auto; margin-right: auto;">
+    <div class="card-header bg-gradient rounded-3 text-white mb-3 d-flex justify-content-center align-items-center"
+         style="background: linear-gradient(90deg, #8e2de2 0%, #4a00e0 100%); height: 70px; text-align:center;">
+        <h3 class="mb-0 w-100"
+            style="font-weight: 900; font-size: 2.5rem; text-shadow: 1px 1px 8px rgba(74, 0, 224, 0.8); margin: 0;">
+            @Model.Username
+        </h3>
+    </div>
+    <div class="card-body fs-5 text-dark">
+        <dl class="row">
+            <dt class="col-sm-4 fw-semibold text-primary">Full Name:</dt>
+            <dd class="col-sm-8">@Model.FullName</dd>
+
+            <dt class="col-sm-4 fw-semibold text-primary">Role:</dt>
+            <dd class="col-sm-8">@Model.Role</dd>
+
+            <dt class="col-sm-4 fw-semibold text-primary">Password Hash:</dt>
+            <dd class="col-sm-8 text-monospace text-truncate" title="@Model.PasswordHash" style="max-width: 300px;">
+                @Model.PasswordHash
+            </dd>
+        </dl>
+    </div>
+</div>
+
+<div class="d-flex gap-3 mt-4 justify-content-center">
+    <a asp-action="Edit" asp-route-id="@Model?.UserId"
+       class="btn btn-primary btn-lg rounded-pill shadow"
+       style="width: 160px; font-weight: 600; letter-spacing: 0.05em; transition: transform 0.2s ease-in-out;"
+       onmouseover="this.style.transform='scale(1.1)'; this.style.boxShadow='0 8px 20px rgba(74, 0, 224, 0.6)';"
+       onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='';">
+        <i class="fas fa-user-edit me-2"></i> Edit
+    </a>
+
+    <a asp-action="Index"
+       class="btn btn-secondary btn-lg rounded-pill shadow"
+       style="width: 160px; font-weight: 600; letter-spacing: 0.05em; transition: transform 0.2s ease-in-out;"
+       onmouseover="this.style.transform='scale(1.1)'; this.style.boxShadow='0 8px 20px rgba(108, 117, 125, 0.6)';"
+       onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='';">
+        <i class="fas fa-arrow-left me-2"></i> Back
+    </a>
+</div>

@@ -1,0 +1,48 @@
+﻿@model CINEMA_WEB3.Models.Showtime
+
+@{
+    ViewData["Title"] = "Add New Showtime"; 
+}
+
+<h1 class="text-center text-primary my-4">Add New Showtime</h1>
+
+<div class="card shadow-lg p-4 mx-auto" style="max-width: 700px; background: linear-gradient(135deg, #e1f5fe, #b3e5fc); border-radius: 20px;">
+    <form asp-action="Create">
+        <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
+
+
+
+        <div class="form-group mb-3">
+            <label asp-for="MovieId" class="form-label fw-bold">Movie</label>
+            <select asp-for="MovieId" class="form-control rounded-pill px-4" asp-items="ViewBag.MovieId"></select>
+            <span asp-validation-for="MovieId" class="text-danger"></span>
+        </div>
+
+        <div class="form-group mb-3">
+            <label asp-for="TheaterId" class="form-label fw-bold">Theater</label>
+            <select asp-for="TheaterId" class="form-control rounded-pill px-4" asp-items="ViewBag.TheaterId"></select>
+            <span asp-validation-for="TheaterId" class="text-danger"></span>
+        </div>
+
+        <div class="form-group mb-4">
+         
+            <label asp-for="StartTime" class="form-label fw-bold">Start Time</label>
+           
+            <input asp-for="StartTime" class="form-control rounded-pill px-4" type="datetime-local" />
+            <span asp-validation-for="StartTime" class="text-danger"></span>
+        </div>
+
+        <div class="text-center">
+            <button type="submit" class="btn btn-primary btn-lg px-5 rounded-pill me-3">➕ Create</button>
+            <a asp-action="Index" class="btn btn-secondary btn-lg px-5 rounded-pill">Back to List</a>
+        </div>
+    </form>
+</div>
+
+
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

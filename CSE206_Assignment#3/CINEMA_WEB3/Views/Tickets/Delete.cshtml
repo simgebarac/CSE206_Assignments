@@ -1,0 +1,48 @@
+﻿@model CINEMA_WEB3.Models.Ticket
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h1 class="text-center text-danger my-4">Delete Ticket</h1>
+
+<div class="card shadow p-4 mx-auto" style="max-width: 650px; background: linear-gradient(135deg, #fce4ec, #f8bbd0); border-radius: 15px;">
+    <h4 class="text-center mb-3" style="color: #880e4f; font-weight: bold;">Are you sure you want to delete this ticket?</h4>
+
+    <dl class="row mb-4" style="font-size: 1.1rem;">
+        <dt class="col-sm-4 fw-bold" style="color: #ad1457;">Seat Number:</dt>
+        <dd class="col-sm-8">@Model.SeatNumber</dd>
+
+        <dt class="col-sm-4 fw-bold" style="color: #ad1457;">Purchase Date:</dt>
+        <dd class="col-sm-8">@Model.PurchaseDate?.ToString("dd MMM yyyy HH:mm")</dd>
+
+        <dt class="col-sm-4 fw-bold" style="color: #ad1457;">Showtime ID:</dt>
+        <dd class="col-sm-8">@Model.Showtime?.ShowtimeId</dd>
+
+        <dt class="col-sm-4 fw-bold" style="color: #ad1457;">User ID:</dt>
+        <dd class="col-sm-8">@Model.User?.UserId</dd>
+    </dl>
+
+    <form asp-action="Delete" method="post" class="text-center">
+        <input type="hidden" asp-for="TicketId" />
+        <button type="submit" class="btn btn-danger btn-lg me-3" style="border-radius: 30px; padding: 0.6rem 2.5rem;">
+            Confirm Delete
+        </button>
+        <a asp-action="Index" class="btn btn-secondary btn-lg" style="border-radius: 30px; padding: 0.6rem 2.5rem;">
+            Cancel
+        </a>
+    </form>
+</div>
+
+<style>
+    .btn-danger:hover {
+        background-color: #6a1b9a;
+        border-color: #6a1b9a;
+    }
+
+    .btn-secondary:hover {
+        background-color: #c2185b;
+        border-color: #c2185b;
+        color: white;
+    }
+</style>

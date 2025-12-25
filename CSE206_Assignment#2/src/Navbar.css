@@ -1,0 +1,31 @@
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #002142;
+    padding: 15px 30px;
+    color: white;
+    box-shadow: 0 2px 5px rgba(199, 136, 136, 0.1);
+  }
+  
+  .navbar-left {
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+  
+  .navbar-right {
+    display: flex;
+    gap: 20px;
+  }
+  
+  .nav-btn {
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+  }
+  
+  .nav-btn:hover {
+    color: #00d4ff;
+    text-decoration: underline;
+  }
